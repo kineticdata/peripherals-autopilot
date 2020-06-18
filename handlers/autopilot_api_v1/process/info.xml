@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taskInfo version="1.0">
+  <info name="api_token" description="API Token" type="encrypted"></info>
+  <info name="enable_debug_logging" description="True or False">false</info>
+</taskInfo>
