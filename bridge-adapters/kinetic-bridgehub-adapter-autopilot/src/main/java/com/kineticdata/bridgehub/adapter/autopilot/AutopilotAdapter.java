@@ -518,7 +518,7 @@ public class AutopilotAdapter implements BridgeAdapter {
         
         String path= new String();
         if (structureList.size() == 1) {
-            if (parameters.containsKey("id")) {
+            if (parameters.containsKey("contact_id")) {
                 path = String.format("%s/%s", "/contact", parameters.get("contact_id"));
                 parameters.remove("contact_id");
             } else {

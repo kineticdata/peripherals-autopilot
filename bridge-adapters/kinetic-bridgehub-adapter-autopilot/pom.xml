@@ -9,7 +9,7 @@
     <name>kinetic-bridgehub-adapter-autopilot</name>
     <scm>
         <connection>scm:git:https://github.com/kineticdata/peripherals-autopilot.git</connection>
-        <developerConnection>scm:git:https://github.com/kineticdata/peripherals-adapter-autopilot.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/kineticdata/peripherals-autopilot.git</developerConnection>
     </scm>
     
     <distributionManagement>
@@ -51,9 +51,9 @@
             <version>1.1.1</version>
         </dependency>
         <dependency>
-            <groupId>com.kineticdata.bridges.adapter</groupId>
-            <artifactId>kinetic-bridgehub-adapter</artifactId>
-            <version>1.1.0</version>
+            <groupId>com.kineticdata.agent</groupId>
+            <artifactId>kinetic-agent-adapter</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.yaml</groupId>
