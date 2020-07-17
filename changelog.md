@@ -3,4 +3,8 @@ Autopilot [handlers] (2020-06-15)
     * Initial commit of the handler
 Autopilot [bridge-adapters] (2020-06-15)
   [kinetic-bridgehub-adapter-autopilot] 
-    * Initial commit of the handler
+    * Initial commit of the adapter
+
+Autopilot [bridge-adapters] (2020-07-17)
+  [kinetic-bridgehub-adapter-autopilot] 
+    * added JsonPath.
