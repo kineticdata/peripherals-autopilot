@@ -340,9 +340,17 @@ public class AutopilotAdapter implements BridgeAdapter {
                 try {
                     obj.put(field, jsonContext.read(field));
                 } catch (JsonPathException e) {
-                    obj.put(field, null);
-                    LOGGER.debug(String.format("%s was not found, returning null"
-                        + " value", field), e);
+                    // if field is a valid path but object is missing the property
+                    // return null for field.  This is consistent with existing 
+                    // adapter behavior.
+                    if (e.getMessage().startsWith("Missing property")) {
+                        obj.put(field, null);
+                        LOGGER.debug(String.format("%s was not found, returning"
+                            + " null value", field), e);
+                    } else {   
+                        throw new JsonPathException(String.format("There was an issue"
+                            + " reading %s", field), e);
+                    }
                 }
             } else {
                 obj.put(field, jsonobj.get(field));
