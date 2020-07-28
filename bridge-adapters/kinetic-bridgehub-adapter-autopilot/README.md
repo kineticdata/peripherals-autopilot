@@ -8,13 +8,19 @@ Name | Description
 Token | The application token
 ___
 ## Supported structures
-* Contacts
+Structure | Parameter * required
+------------ | -------------
+Contacts  | contact_id
+Contacts > List | * list_id
+Lists | 
+Adhoc | * accessor
 ___
 ## Example Qualification Mapping
-* id=test@slarty.com
+* contact_id=test@slarty.com
 ___
 ## Notes
-* To get a single contact provide id=${id}
+* [JsonPath](https://github.com/json-path/JsonPath#path-examples) can be used to access nested values. The root of the path is values.
+* To get a single contact provide contact_id=${id}
 ___
 ### Developer notes
 * All endpoints are conforming to JSON object except Custom Fields which returns

@@ -91,7 +91,7 @@ public class AutopilotTest extends BridgeAdapterTestBase{
         }
         
         assertNull(error);
-        assertTrue(count.getValue() == adhocCount.getValue());
+        assertTrue(count.getValue().equals(adhocCount.getValue()));
     }
     
     @Test
@@ -110,7 +110,7 @@ public class AutopilotTest extends BridgeAdapterTestBase{
         request.setQuery("contact_id=<%=parameter[\"Id\"]%>");
         
         request.setParameters(new HashMap<String, String>() {{ 
-            put("Id", "tutu@fake.com");
+            put("Id", "dmcclure@us.ibm.com");
         }});        
         
         Record record = null;
@@ -140,7 +140,7 @@ public class AutopilotTest extends BridgeAdapterTestBase{
         request.setQuery("list_id=<%=parameter[\"Id\"]%>");
         
         request.setParameters(new HashMap<String, String>() {{ 
-            put("Id", "contactlist_ef51e77e-74cf-4353-bb37-7c861740f5bd");
+            put("Id", "contactlist_05068200-83ef-455c-a0f3-e61a4292a465");
         }});        
         
         Record record = null;
@@ -170,7 +170,7 @@ public class AutopilotTest extends BridgeAdapterTestBase{
         request.setQuery("contact_id=<%=parameter[\"Id\"]%>");
         
         request.setParameters(new HashMap<String, String>() {{ 
-            put("Id", "tutu@fake.com");
+            put("Id", "dmcclure@us.ibm.com");
         }});
         
         
@@ -242,6 +242,35 @@ public class AutopilotTest extends BridgeAdapterTestBase{
         
         assertNull(error);
         assertTrue(adhocRecords.getRecords().size() == records.getRecords().size());
+    }
+    
+    @Test
+    public void test_search_json_path() throws Exception{
+        BridgeError error = null;
+        
+        // Create the Bridge Request
+        List<String> fields = new ArrayList<>();
+        fields.add("Email");
+        fields.add("custom_fields");
+        fields.add("$.custom_fields[*].kind");
+        fields.add("$.lists");
+        
+        BridgeRequest request = new BridgeRequest();
+        request.setStructure("Contacts");
+        request.setFields(fields);
+        request.setQuery("");
+        
+        request.setParameters(new HashMap<String, String>());
+                     
+        RecordList records = null;
+        try {
+            records = getAdapter().search(request);
+        } catch (BridgeError e) {
+            error = e;
+        }
+        
+        assertNull(error);
+        assertTrue(records.getRecords().size() > 0);
     }
     
     @Test
