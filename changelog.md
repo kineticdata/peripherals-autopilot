@@ -13,3 +13,9 @@ Autopilot [bridge-adapters] (2020-07-17)
 Autopilot [bridge-adapters] (2020-07-20)
   * [kinetic-bridgehub-adapter-autopilot] 
     * added a conditional and tests for JsonPath.
+
+Autopilot [bridge-adapters] (2020-07-20)
+  * [repo]
+    * added thumbnail image
+  * [kinetic-bridgehub-adapter-autopilot] 
+    * added additional tests and comments
