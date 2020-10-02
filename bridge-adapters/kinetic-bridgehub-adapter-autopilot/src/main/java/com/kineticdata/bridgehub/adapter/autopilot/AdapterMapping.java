@@ -12,6 +12,7 @@ import java.util.Map;
  * This class defines valid Structures.
  * Properties:
  *  String structure - Name of the data model.
+ *  String accessor - property name accessor when multiple results returned.
  *  PathBuilder pathBuilder - URL path to asset.  Defined in child class.
  */
 public class AdapterMapping {

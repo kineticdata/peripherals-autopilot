@@ -218,7 +218,7 @@ public class AutopilotAdapter implements BridgeAdapter {
             List<String> fields = getFields(request.getFields() == null ? 
                 new ArrayList() : request.getFields(), object);
             record = buildRecord(fields, object);
-        } else if (responseArray.size() == 0) {
+        } else if (responseArray.isEmpty()) {
             LOGGER.debug("No results found for query: {}", request.getQuery());
         } else {
             throw new BridgeError ("Retrieve must return a single result."
@@ -273,8 +273,7 @@ public class AutopilotAdapter implements BridgeAdapter {
         // Bookmark is autopilot pagination strategy
         if (responseObject.containsKey("bookmark")) {
             metadata.put("bookmark", (String)responseObject.get("bookmark"));
-        }
-        
+        }    
 
         JSONArray responseArray = new JSONArray();
         if (responseObject.containsKey(accessor)) {
@@ -313,7 +312,7 @@ public class AutopilotAdapter implements BridgeAdapter {
     /*----------------------------------------------------------------------------------------------
      * HELPER METHODS
      *--------------------------------------------------------------------------------------------*/
-        protected List<String> getFields(List<String> fields, JSONObject jsonobj) {
+    protected List<String> getFields(List<String> fields, JSONObject jsonobj) {
         // if no fields were provided then all fields will be returned. 
         if(fields.isEmpty()){
             fields.addAll(jsonobj.keySet());
