@@ -260,7 +260,7 @@ public class AutopilotTest extends BridgeAdapterTestBase{
         request.setFields(fields);
         request.setQuery("");
         
-        request.setParameters(new HashMap<String, String>());
+        request.setParameters(new HashMap<>());
                      
         RecordList records = null;
         try {

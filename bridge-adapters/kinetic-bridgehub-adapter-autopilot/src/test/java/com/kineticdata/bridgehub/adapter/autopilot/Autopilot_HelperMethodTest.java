@@ -77,12 +77,12 @@ public class Autopilot_HelperMethodTest {
         list.add("FirstName");
         
         String jsonString = "{\"FirstName\": \"Foo\", \"custom_fields\": [{" +
-            "\"kind\": \"Total activities - Pipedrive\", \"value\": 0," +
+            "\"kind\": \"Total activities\", \"value\": 0," +
             "\"fieldType\": \"integer\"}]}";
         JSONObject jsonobj = (JSONObject)JSONValue.parse(jsonString);
         
         String recordControl = "{\"FirstName\":\"Foo\",\"$.custom_fields[*].kind\":"
-            + "[\"Total activities - Pipedrive\"]}";
+            + "[\"Total activities\"]}";
         
         Record record = helper.buildRecord(list, jsonobj);
         String recordString = ((JSONObject)record.getRecord()).toJSONString();
@@ -95,6 +95,7 @@ public class Autopilot_HelperMethodTest {
         }
         assertNull(ioError);
         
+        // jsonPath is valid but property does not exist
         recordControl = "{\"FirstName\":\"Foo\",\"$.custom_fields[*].kind\":null}";
         
         jsonobj.remove("custom_fields");
@@ -108,6 +109,7 @@ public class Autopilot_HelperMethodTest {
         }
         assertNull(ioError);
         
+        // jsonPath is invalid
         list.add("$[custom_fields]");
         
         JsonPathException error = null;
