@@ -19,3 +19,8 @@ Autopilot [bridge-adapters] (2020-07-20)
     * added thumbnail image
   * [kinetic-bridgehub-adapter-autopilot] 
     * added additional tests and comments
+
+Autopilot [bridge-adapters] (2021-03-11)
+  * [kinetic-bridgehub-adapter-autopilot] 
+    * Update commons-collections dependency for security scan
+	* Update version to 1.1.0
