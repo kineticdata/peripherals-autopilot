@@ -24,3 +24,7 @@ Autopilot [bridge-adapters] (2021-03-11)
   * [kinetic-bridgehub-adapter-autopilot] 
     * Update commons-collections dependency for security scan
 	* Update version to 1.1.0
+
+Autopilot [bridge-adapters] (2024-02-20)
+  * [kinetic-bridgehub-adapter-autopilot] v 1.1.1
+    * updated snakeyaml version due to vulnerability
